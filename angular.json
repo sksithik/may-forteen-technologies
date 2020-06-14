@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "may-forteen-technologies"
+    }
+  },
+  "defaultProject": "may-forteen-technologies",
+  "cli": {
+    "analytics": "975cb451-2b1d-4fa3-9b63-32105d85be34"
+  }
 }
