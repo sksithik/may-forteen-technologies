@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { CONTENTFUL_CLIENT } from './contentful.injection-token';
-import { ContentfulClientApi } from 'contentful';
+import { ContentfulClientApi, Entry } from 'contentful';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,12 @@ export class ContentfulService {
 
   constructor(@Inject(CONTENTFUL_CLIENT) private contentfulApi: ContentfulClientApi) {}
 
-  getItems = async (): Promise<any> => {
-    const entries = await this.contentfulApi.getEntries({ 'include': 10, 'sys.id' : '74PB5i6qz75kRQPnquiOgp' });
-    return entries.items;
+  getPage (pagePath?: string): Promise<Entry<any>[]> {
+    const queryObject = {
+      'include': 1,
+      'content_type': 'page',
+      'fields.pageUrl': pagePath
+    }
+    return this.contentfulApi.getEntries(queryObject).then(res => res.items);
   }
 }
