@@ -11,7 +11,6 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.contentfulData);
   }
 
 }
