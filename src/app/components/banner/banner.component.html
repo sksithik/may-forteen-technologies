@@ -1,2 +1,7 @@
-<img [src]="contentfulData.bannerImageLink" class="banner-position">
-<p> {{contentfulData.bottomCopy}}</p>
+<div class="banner-container">
+    <img [src]="contentfulData.bannerImageUrl">
+    <div class="banner-container__copy">
+        <h1 [innerHTML]="contentfulData.bannerHeading"></h1>
+        <h3 [innerHTML]="contentfulData.bannerCopy"></h3>
+    </div>
+</div>
