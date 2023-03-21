@@ -1,16 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Entry } from 'contentful';
-
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss']
 })
-export class BannerComponent implements OnInit {
+export class BannerComponent {
   @Input('contentfulData') contentfulData: any;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

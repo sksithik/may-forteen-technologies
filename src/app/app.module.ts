@@ -4,20 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentfulModule } from './common/contentful/contentful.module';
-import { HomeComponent } from './pages/home/home.component';
-import { HomeResolver } from './pages/home/home-resolver.service';
+
+import { ContentResolver } from './service/content-resolver.service';
 import { CmsRendererComponent } from './common/cmsRenderer/cms-renderer.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ActiveComponent } from './pages/active/active.component';
+import { CopyBlockComponent } from './components/copy-block/copy-block.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CmsRendererComponent,
     BannerComponent,
-    NavigationComponent
+    NavigationComponent,
+    ActiveComponent,
+    CopyBlockComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     ContentfulModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [HomeResolver],
+  providers: [ContentResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

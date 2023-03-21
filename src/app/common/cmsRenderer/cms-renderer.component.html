@@ -1,5 +1,6 @@
-<div *ngIf=contentfulData.fields.modules>
-    <div *ngFor="let contentfulDatas of contentfulData.fields.modules" [ngSwitch]="contentfulDatas.sys.contentType.sys.id">
+<div *ngIf=contentfulData.fields.modules class="cms-renderer-container">
+    <div *ngFor="let contentfulDatas of contentfulData.fields.modules" [ngSwitch]="contentfulDatas.sys.contentType.sys.id" >
         <app-banner *ngSwitchCase="'banner'" [contentfulData]="contentfulDatas.fields"></app-banner>
+        <app-copy-block *ngSwitchCase="'copyBlock'" [contentfulData]="contentfulDatas.fields"></app-copy-block>
     </div>
 </div>

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { HomeResolver } from './pages/home/home-resolver.service';
+import { ActiveComponent } from './pages/active/active.component';
+import { ContentResolver } from './service/content-resolver.service';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, resolve: { contentfulData: HomeResolver } },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: ActiveComponent, resolve: { contentfulData: ContentResolver } }
 ];
 
 @NgModule({
